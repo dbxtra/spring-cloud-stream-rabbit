@@ -1,0 +1,17 @@
+spring:
+  cloud:
+    stream:
+      bindings:
+        input:
+          destination: queue.log.messages
+          binder: rabbit
+          group: test.group
+        output:
+          destination: queue.pretty.log.messages
+          binder: rabbit
+  security:
+    user:
+      name: admin
+      password: solace1
+server:
+  port: 8888
